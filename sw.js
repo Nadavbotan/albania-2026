@@ -1,4 +1,4 @@
-const CACHE_NAME = "albania-trip-v1";
+const CACHE_NAME = "albania-trip-v2";
 
 const PRECACHE_URLS = [
   "./",
@@ -7,6 +7,7 @@ const PRECACHE_URLS = [
   "css/style.css",
   "js/data.js",
   "js/weather.js",
+  "js/maps.js",
   "js/app.js",
   "icons/icon-192.png",
   "icons/icon-512.png",

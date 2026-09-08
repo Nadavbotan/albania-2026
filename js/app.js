@@ -17,19 +17,19 @@ function renderLines(lines) {
       html += `<h3 class="sub">${escapeHtml(line.slice(3))}</h3>`;
     } else if (line.startsWith("- ")) {
       if (!listOpen) { html += "<ul>"; listOpen = true; }
-      html += `<li>${escapeHtml(line.slice(2))}</li>`;
+      html += `<li>${linkifyPlaces(escapeHtml(line.slice(2)))}</li>`;
     } else if (line.startsWith("★")) {
       closeList();
-      html += `<div class="highlight"><span class="badge">★ מומלץ</span>${escapeHtml(line.slice(1).trim())}</div>`;
+      html += `<div class="highlight"><span class="badge">★ מומלץ</span>${linkifyPlaces(escapeHtml(line.slice(1).trim()))}</div>`;
     } else if (line.startsWith("🥾")) {
       closeList();
-      html += `<div class="hike"><span class="badge">🥾 טיול</span>${escapeHtml(line.slice(2).trim())}</div>`;
+      html += `<div class="hike"><span class="badge">🥾 טיול</span>${linkifyPlaces(escapeHtml(line.slice(2).trim()))}</div>`;
     } else if (!HEBREW_RE.test(line)) {
       closeList();
-      html += `<p class="en-caption">${escapeHtml(line)}</p>`;
+      html += `<p class="en-caption">${linkifyPlaces(escapeHtml(line))}</p>`;
     } else {
       closeList();
-      html += `<p>${escapeHtml(line)}</p>`;
+      html += `<p>${linkifyPlaces(escapeHtml(line))}</p>`;
     }
   }
   closeList();
