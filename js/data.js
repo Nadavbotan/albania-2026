@@ -111,7 +111,7 @@ const DAYS = [
   },
   {
     id: 7, date: "21.09", weekday: "שני",
-    city: "הימרה (הגעה)", cityEn: "Himara · Livadhi Beach",
+    city: "הימרה", cityEn: "Himara · Livadhi Beach",
     lodging: "Vila Natali (לילה 1/2)", lodgingType: "Booking",
     lat: 40.1004, lon: 19.7460, meta: "בסיס ליד חוף לוואדי · יום 1 מתוך 2",
     lines: [
@@ -123,7 +123,7 @@ const DAYS = [
   },
   {
     id: 8, date: "22.09", weekday: "שלישי",
-    city: "הימרה (יום מלא)", cityEn: "Himara",
+    city: "הימרה", cityEn: "Himara",
     lodging: "Vila Natali (לילה 2/2)", lodgingType: "Booking",
     lat: 40.1004, lon: 19.7460, meta: "יום מלא · פורטו פלרמו",
     lines: [
@@ -143,7 +143,7 @@ const DAYS = [
   },
   {
     id: 9, date: "23.09", weekday: "רביעי",
-    city: "קסמיל (הגעה)", cityEn: "Ksamil",
+    city: "קסמיל", cityEn: "Ksamil",
     lodging: "Muze Hotel (לילה 1/3)", lodgingType: "Booking",
     lat: 39.7686, lon: 19.9908, meta: "חופי גן עדן · יום 1 מתוך 3",
     lines: [
