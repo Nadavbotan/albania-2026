@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>יום הטיול · אלבניה 2026</title>
+  <meta name="theme-color" content="#D9764A" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icons/icon-192.png" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="day-topbar">
+    <a href="index.html" class="back-link">← כל הטיול</a>
+  </div>
+
+  <div class="day-hero">
+    <div class="weekday" id="d-weekday"></div>
+    <div class="date" id="d-date"></div>
+    <h1 id="d-city"></h1>
+    <div class="city-en" id="d-cityen"></div>
+    <div class="meta" id="d-meta"></div>
+  </div>
+
+  <div class="lodging-card">
+    <span class="emoji">🛏️</span>
+    <div>
+      <div class="lbl">לינה הלילה</div>
+      <div class="val" id="d-lodging"></div>
+    </div>
+  </div>
+
+  <div class="wx-card">
+    <div class="wx-title">תחזית ל-<span id="d-wx-date"></span></div>
+    <div id="d-weather"></div>
+  </div>
+
+  <div class="content" id="d-content"></div>
+
+  <div class="day-nav">
+    <a id="nav-prev" href="#">← הקודם</a>
+    <a id="nav-index" href="index.html">כל הימים</a>
+    <a id="nav-next" class="primary" href="#">הבא →</a>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/weather.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    const params = new URLSearchParams(location.search);
+    const id = parseInt(params.get("d") || "1", 10);
+    const idx = DAYS.findIndex((d) => d.id === id);
+    const day = DAYS[idx] || DAYS[0];
+
+    document.getElementById("d-weekday").textContent = "יום " + day.weekday;
+    document.getElementById("d-date").textContent = day.date + ".2026";
+    document.getElementById("d-city").textContent = day.city;
+    document.getElementById("d-cityen").textContent = day.cityEn;
+    document.getElementById("d-wx-date").textContent = day.date;
+
+    const metaEl = document.getElementById("d-meta");
+    if (day.meta) {
+      metaEl.textContent = day.meta;
+    } else {
+      metaEl.style.display = "none";
+    }
+
+    document.getElementById("d-lodging").textContent =
+      day.lodging + (day.lodgingType && day.lodgingType !== "—" ? " · " + day.lodgingType : "");
+
+    document.getElementById("d-content").innerHTML = renderLines(day.lines);
+
+    renderWeather(document.getElementById("d-weather"), day);
+
+    const prev = DAYS[idx - 1];
+    const next = DAYS[idx + 1];
+    const prevEl = document.getElementById("nav-prev");
+    const nextEl = document.getElementById("nav-next");
+
+    if (prev) prevEl.href = `day.html?d=${prev.id}`;
+    else prevEl.classList.add("disabled");
+
+    if (next) nextEl.href = `day.html?d=${next.id}`;
+    else nextEl.classList.add("disabled");
+
+    registerSW();
+    window.scrollTo(0, 0);
+  </script>
+</body>
+</html>

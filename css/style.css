@@ -1,0 +1,341 @@
+:root {
+  --bg: #FBF3E7;
+  --card: #FFFFFF;
+  --text: #2E2A26;
+  --muted: #9A8672;
+  --accent: #D9764A;
+  --accent-dark: #C15A32;
+  --teal: #237F82;
+  --teal-light: #E4F1F0;
+  --highlight-bg: #FDF0DE;
+  --highlight-border: #E8A94B;
+  --hike-bg: #EAF3E9;
+  --hike-border: #6FA96E;
+  --shadow: 0 4px 18px rgba(60, 40, 20, 0.08);
+  --radius: 18px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+body {
+  padding-bottom: 90px;
+}
+
+a { color: inherit; text-decoration: none; }
+
+.container {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 20px 16px;
+}
+
+/* ---------- Header (overview) ---------- */
+.trip-header {
+  text-align: center;
+  padding: 28px 16px 20px;
+}
+
+.trip-header h1 {
+  font-size: 26px;
+  margin: 0 0 6px;
+  color: var(--accent-dark);
+}
+
+.trip-header .dates {
+  color: var(--teal);
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.trip-header .people {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+/* ---------- Day list cards ---------- */
+.day-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.day-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 12px 14px;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid transparent;
+}
+
+.day-card.is-today {
+  border-color: var(--accent);
+}
+
+.day-card .date-badge {
+  flex: 0 0 auto;
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  background: var(--teal-light);
+  color: var(--teal);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.day-card .date-badge .dnum { font-size: 18px; }
+.day-card .date-badge .dmon { font-size: 10px; opacity: 0.8; }
+
+.day-card .info { flex: 1; min-width: 0; }
+
+.day-card .city {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.day-card .weekday-en {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.day-card .today-pill {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+.day-card .arrow {
+  color: var(--muted);
+  font-size: 20px;
+}
+
+/* ---------- Day page ---------- */
+.day-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px 0;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--teal);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.day-hero {
+  text-align: center;
+  padding: 8px 16px 18px;
+}
+
+.day-hero .weekday {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.day-hero .date {
+  color: var(--accent-dark);
+  font-weight: 700;
+  font-size: 15px;
+  margin-top: 2px;
+}
+
+.day-hero h1 {
+  font-size: 26px;
+  margin: 6px 0 2px;
+}
+
+.day-hero .city-en {
+  color: var(--teal);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.day-hero .meta {
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--muted);
+  background: var(--teal-light);
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 12px;
+}
+
+.lodging-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 12px 14px;
+  margin: 0 16px 12px;
+}
+
+.lodging-card .emoji { font-size: 22px; }
+.lodging-card .lbl { font-size: 11px; color: var(--muted); }
+.lodging-card .val { font-size: 14px; font-weight: 600; }
+
+/* ---------- Weather widget ---------- */
+.wx-card {
+  margin: 0 16px 16px;
+  background: linear-gradient(135deg, var(--teal), #2f9c98);
+  color: #fff;
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  box-shadow: var(--shadow);
+}
+
+.wx-card .wx-title {
+  font-size: 12px;
+  opacity: 0.85;
+  margin-bottom: 4px;
+}
+
+.wx {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+}
+
+.wx-icon { font-size: 28px; }
+.wx-temps { font-size: 18px; }
+.wx-label { opacity: 0.9; font-size: 13px; }
+.wx-pop { font-size: 12px; opacity: 0.85; margin-right: auto; }
+.wx-empty, .wx-loading { font-size: 13px; opacity: 0.9; }
+
+/* ---------- Content blocks ---------- */
+.content {
+  padding: 4px 16px 20px;
+  line-height: 1.6;
+  font-size: 15.5px;
+}
+
+.content p { margin: 0 0 12px; }
+
+.content .en-caption {
+  color: var(--muted);
+  font-size: 12.5px;
+  font-style: italic;
+  margin: -8px 0 12px;
+}
+
+.content .sub {
+  color: var(--accent-dark);
+  font-size: 16px;
+  margin: 20px 0 8px;
+  border-right: 3px solid var(--accent);
+  padding-right: 10px;
+}
+
+.content ul {
+  margin: 0 0 12px;
+  padding-right: 20px;
+}
+
+.content li { margin-bottom: 6px; }
+
+.content .highlight, .content .hike {
+  border-radius: 14px;
+  padding: 12px 14px;
+  margin: 0 0 14px;
+  position: relative;
+}
+
+.content .highlight {
+  background: var(--highlight-bg);
+  border: 1px solid var(--highlight-border);
+}
+
+.content .hike {
+  background: var(--hike-bg);
+  border: 1px solid var(--hike-border);
+}
+
+.content .badge {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: var(--accent-dark);
+}
+
+.content .hike .badge { color: #3f7d3d; }
+
+/* ---------- Bottom nav ---------- */
+.day-nav {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  gap: 8px;
+  padding: 10px 16px;
+  background: var(--bg);
+  border-top: 1px solid rgba(0,0,0,0.06);
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.day-nav a {
+  flex: 1;
+  text-align: center;
+  background: var(--card);
+  border-radius: 14px;
+  padding: 12px 8px;
+  font-weight: 700;
+  font-size: 14px;
+  box-shadow: var(--shadow);
+}
+
+.day-nav a.primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.day-nav a.disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* ---------- Footer note (overview) ---------- */
+.reminder-card {
+  margin-top: 16px;
+  background: var(--highlight-bg);
+  border: 1px solid var(--highlight-border);
+  border-radius: var(--radius);
+  padding: 14px;
+  font-size: 13.5px;
+}
+
+.reminder-card b { color: var(--accent-dark); }

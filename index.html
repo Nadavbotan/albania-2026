@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>טיול אלבניה 2026</title>
+  <meta name="theme-color" content="#D9764A" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icons/icon-192.png" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="trip-header">
+      <h1 id="trip-title"></h1>
+      <div class="dates" id="trip-dates"></div>
+      <div class="people" id="trip-people"></div>
+    </div>
+
+    <div class="day-list" id="day-list"></div>
+
+    <div class="reminder-card" id="reminder-card"></div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/weather.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    document.getElementById("trip-title").textContent = TRIP.title;
+    document.getElementById("trip-dates").textContent = TRIP.dates;
+    document.getElementById("trip-people").textContent = TRIP.people;
+    document.getElementById("reminder-card").innerHTML = `<b>תזכורת:</b> ${TRIP.reminder}`;
+
+    const today = findTodayDay(DAYS);
+    const list = document.getElementById("day-list");
+
+    DAYS.forEach((day) => {
+      const isToday = today && today.id === day.id;
+      const el = document.createElement("a");
+      el.href = `day.html?d=${day.id}`;
+      el.className = "day-card" + (isToday ? " is-today" : "");
+      const [d, m] = day.date.split(".");
+      el.innerHTML = `
+        ${isToday ? '<span class="today-pill">היום</span>' : ""}
+        <div class="date-badge"><span class="dnum">${d}</span><span class="dmon">09.26</span></div>
+        <div class="info">
+          <div class="city">${day.city}</div>
+          <div class="weekday-en">${day.weekday} · ${day.cityEn}</div>
+        </div>
+        <div class="arrow">‹</div>
+      `;
+      list.appendChild(el);
+    });
+
+    registerSW();
+
+    // scroll today's card into view
+    if (today) {
+      const idx = DAYS.findIndex((d) => d.id === today.id);
+      const node = list.children[idx];
+      if (node) setTimeout(() => node.scrollIntoView({ block: "center" }), 100);
+    }
+  </script>
+</body>
+</html>
