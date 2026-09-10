@@ -3,9 +3,9 @@
 //   "## " = subheading   "- " = bullet   "★"/"🥾" = auto-styled highlight (kept in text)
 
 const TRIP = {
-  title: "טיול משפחתי לאלבניה",
+  title: "מש' חכמוב באלבניה",
   dates: "15–29 בספטמבר 2026",
-  people: "נדב, אשתו והבן (שנה וחצי)",
+  people: "",
   reminder: "ביטוח רכב שתקף למקדוניה (כרטיס ירוק) ליום 17.09 — לוודא מראש מול חברת ההשכרה."
 };
 
