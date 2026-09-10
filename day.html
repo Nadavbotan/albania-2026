@@ -70,7 +70,8 @@
     document.getElementById("d-lodging").textContent =
       day.lodging + (day.lodgingType && day.lodgingType !== "—" ? " · " + day.lodgingType : "");
 
-    document.getElementById("d-content").innerHTML = renderLines(day.lines);
+    document.getElementById("d-content").innerHTML = renderLines(day.lines) + renderLodgingBottom(day);
+    initCopyButtons(document.getElementById("d-content"));
 
     renderWeather(document.getElementById("d-weather"), day);
 

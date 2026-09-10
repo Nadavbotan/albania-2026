@@ -304,6 +304,85 @@ a { color: inherit; text-decoration: none; }
 
 .content .hike .badge { color: #3f7d3d; }
 
+/* ---------- Lodging bottom card ---------- */
+.lodging-bottom {
+  margin: 24px 0 12px;
+  background: var(--teal-light);
+  border: 1px solid rgba(35, 127, 130, 0.25);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+}
+
+.lodging-bottom-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.lodging-bottom .lodging-name {
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--text);
+}
+
+.platform-badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+
+.platform-badge.platform-booking {
+  background: #003580;
+  color: #fff;
+}
+
+.platform-badge.platform-airbnb {
+  background: #FF385C;
+  color: #fff;
+}
+
+.lodging-bottom-address {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background: var(--card);
+  border-radius: 12px;
+  padding: 8px 10px;
+}
+
+.lodging-bottom-address .address-text {
+  font-size: 13px;
+  color: var(--muted);
+  direction: ltr;
+  text-align: left;
+  unicode-bidi: plaintext;
+}
+
+.copy-btn {
+  flex: 0 0 auto;
+  border: none;
+  background: var(--teal-light);
+  border-radius: 8px;
+  font-size: 15px;
+  padding: 6px 10px;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+.copy-btn:active {
+  transform: scale(0.9);
+}
+
+.copy-btn.copied {
+  background: var(--hike-bg);
+  color: #3f7d3d;
+}
+
 /* ---------- Bottom nav ---------- */
 .day-nav {
   position: fixed;

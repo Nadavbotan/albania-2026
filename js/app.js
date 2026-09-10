@@ -42,6 +42,47 @@ function escapeHtml(str) {
   return div.innerHTML;
 }
 
+function platformBadge(lodgingType) {
+  if (lodgingType === "Booking") return `<span class="platform-badge platform-booking">🅱️ Booking</span>`;
+  if (lodgingType === "Airbnb") return `<span class="platform-badge platform-airbnb">🏠 Airbnb</span>`;
+  return "";
+}
+
+function renderLodgingBottom(day) {
+  if (!day.lodgingAddress) return "";
+  return `
+    <div class="lodging-bottom">
+      <div class="lodging-bottom-header">
+        ${platformBadge(day.lodgingType)}
+        <span class="lodging-name">${escapeHtml(day.lodging)}</span>
+      </div>
+      <div class="lodging-bottom-address">
+        <span class="address-text">${escapeHtml(day.lodgingAddress)}</span>
+        <button class="copy-btn" type="button" data-copy="${escapeHtml(day.lodgingAddress)}" aria-label="העתק כתובת" title="העתק כתובת">📋</button>
+      </div>
+    </div>`;
+}
+
+function initCopyButtons(root) {
+  root.querySelectorAll(".copy-btn").forEach((btn) => {
+    btn.addEventListener("click", async () => {
+      const text = btn.getAttribute("data-copy");
+      try {
+        await navigator.clipboard.writeText(text);
+      } catch (e) {
+        return;
+      }
+      const original = btn.textContent;
+      btn.textContent = "✓";
+      btn.classList.add("copied");
+      setTimeout(() => {
+        btn.textContent = original;
+        btn.classList.remove("copied");
+      }, 1200);
+    });
+  });
+}
+
 function todayISO() {
   const d = new Date();
   return d.toISOString().slice(0, 10);

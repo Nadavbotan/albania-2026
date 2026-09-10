@@ -14,6 +14,7 @@ const DAYS = [
     id: 1, date: "15.09", weekday: "שלישי",
     city: "טירנה", cityEn: "Tirana",
     lodging: "Rogner Hotel Tirana", lodgingType: "Booking",
+    lodgingAddress: "Bulevardi Dëshmorët e Kombit, 1000 Tirana, Albania",
     lat: 41.3275, lon: 19.8187, meta: null,
     lines: [
       "בוקר: נוחתים בטירנה, אוספים את הרכב השכור ונוסעים למלון. מתמקמים ונחים קצת אחרי הטיסה",
@@ -31,6 +32,7 @@ const DAYS = [
     id: 2, date: "16.09", weekday: "רביעי",
     city: "פוגראדץ", cityEn: "Pogradec · Lake Ohrid",
     lodging: "Guest's Apartament (לילה 1/2)", lodgingType: "Booking",
+    lodgingAddress: "Rruga Gani Butka, Pogradec, Albania",
     lat: 40.9026, lon: 20.6529, meta: "נסיעה כשעתיים · דרילון",
     lines: [
       "בוקר: בוקר אחרון בטירנה, יציאה בסביבות 11:00–12:00 לכיוון פוגראדץ — נסיעה של כשעתיים. דודו עושה שנ\"צ ברכב בדרך.",
@@ -44,6 +46,7 @@ const DAYS = [
     id: 3, date: "17.09", weekday: "חמישי",
     city: "אוחריד, מקדוניה הצפונית", cityEn: "Ohrid, North Macedonia",
     lodging: "Guest's Apartament, פוגראדץ (לילה 2/2)", lodgingType: "Booking",
+    lodgingAddress: "Rruga Gani Butka, Pogradec, Albania",
     lat: 41.1231, lon: 20.8016, meta: "מעבר גבול · שוק · טיילת · קנאו",
     lines: [
       "בוקר: קמים ונוסעים לאוחריד שבמקדוניה הצפונית.",
@@ -61,6 +64,7 @@ const DAYS = [
     id: 4, date: "18.09", weekday: "שישי",
     city: "פוגראדץ ← בראט", cityEn: "Pogradec → Berat",
     lodging: "Home in Berat", lodgingType: "Airbnb",
+    lodgingAddress: "Rruga Petrit Lulo, 4, Berat, Berat 5002, Albania",
     lat: 40.7058, lon: 19.9522, meta: "נסיעה כ-3ש עם עצירות · אלבסאן · אגם",
     lines: [
       "בוקר: יום נסיעה קצת ארוך (כשלוש שעות נטו) אבל שוברים אותו לעצירות נחמדות. יוצאים בבוקר.",
@@ -82,6 +86,7 @@ const DAYS = [
     id: 5, date: "19.09", weekday: "שבת",
     city: "ולורה", cityEn: "Vlorë",
     lodging: "Guest House Miracle Garden", lodgingType: "Booking",
+    lodgingAddress: "Rruga Andrea Varfi, 9401 Vlorë, Albania",
     lat: 40.4660, lon: 19.4894, meta: "מנזר · לגונה · פלמינגו · בונקרים",
     lines: [
       "בוקר: קמים, הולכים לבית קפה בבארט ומסתובבים קצת בטיילת שם, מכינים אוכל, מתארגנים ויוצאים לוולורה. - לכיוון השנצ של דודו (שעה וחצי נסיעה)",
@@ -100,6 +105,7 @@ const DAYS = [
     id: 6, date: "20.09", weekday: "ראשון",
     city: "שמורת האיילים (דרימי/לוגורה)", cityEn: "Dhërmi / Llogora area — deer sanctuary",
     lodging: "Te'Dreri – Llogora Tourist Village", lodgingType: "Booking",
+    lodgingAddress: "Llogara National Park, 8401 Dhërmi, Albania",
     lat: 40.1892, lon: 19.6167, meta: "טיול בשמורה · לינה עם איילים",
     lines: [
       "בוקר: מתארגנים, אורזים ויוצאים לשמורת הטבע שבה ישנים עם איילים.",
@@ -113,6 +119,7 @@ const DAYS = [
     id: 7, date: "21.09", weekday: "שני",
     city: "הימרה", cityEn: "Himara · Livadhi Beach",
     lodging: "Vila Natali (לילה 1/2)", lodgingType: "Booking",
+    lodgingAddress: "Himare - Livadh Road, 9425 Himare, Albania",
     lat: 40.1004, lon: 19.7460, meta: "בסיס ליד חוף לוואדי · יום 1 מתוך 2",
     lines: [
       "## יום 1 (21.09, שני) — הגעה",
@@ -125,6 +132,7 @@ const DAYS = [
     id: 8, date: "22.09", weekday: "שלישי",
     city: "הימרה", cityEn: "Himara",
     lodging: "Vila Natali (לילה 2/2)", lodgingType: "Booking",
+    lodgingAddress: "Himare - Livadh Road, 9425 Himare, Albania",
     lat: 40.1004, lon: 19.7460, meta: "יום מלא · פורטו פלרמו",
     lines: [
       "## יום 2 (22.09, שלישי) — יום מלא",
@@ -145,6 +153,7 @@ const DAYS = [
     id: 9, date: "23.09", weekday: "רביעי",
     city: "קסמיל", cityEn: "Ksamil",
     lodging: "Muze Hotel (לילה 1/3)", lodgingType: "Booking",
+    lodgingAddress: "Rruga Magdalena, 9706 Ksamil, Albania",
     lat: 39.7686, lon: 19.9908, meta: "חופי גן עדן · יום 1 מתוך 3",
     lines: [
       "הגעה: נסיעה מהימרה לקסמיל כ-1:15–1:45 לאורך הכביש החופי. קסמיל היא אשכול של מפרצונים מוגנים — מושלם לפעוט כי כל מפרץ מוגן מגלים.",
@@ -161,6 +170,7 @@ const DAYS = [
     id: 10, date: "24.09", weekday: "חמישי",
     city: "קסמיל", cityEn: "Ksamil",
     lodging: "Muze Hotel (לילה 2/3)", lodgingType: "Booking",
+    lodgingAddress: "Rruga Magdalena, 9706 Ksamil, Albania",
     lat: 39.7686, lon: 19.9908, meta: "בוטרינט · יום 2 מתוך 3",
     lines: [
       "## יום 2 (24.09, חמישי)",
@@ -176,6 +186,7 @@ const DAYS = [
     id: 11, date: "25.09", weekday: "שישי",
     city: "קסמיל", cityEn: "Ksamil",
     lodging: "Muze Hotel (לילה 3/3)", lodgingType: "Booking",
+    lodgingAddress: "Rruga Magdalena, 9706 Ksamil, Albania",
     lat: 39.7686, lon: 19.9908, meta: "האיים של קסמיל · יום 3 מתוך 3",
     lines: [
       "## יום 3 (25.09, שישי)",
@@ -188,6 +199,7 @@ const DAYS = [
     id: 12, date: "26.09", weekday: "שבת",
     city: "ג׳ירוקסטר", cityEn: "Gjirokastër",
     lodging: "Home in Gjirokaster", lodgingType: "Airbnb",
+    lodgingAddress: "Rruga Pazari i Vjetër Pllake, Gjirokaster, Gjirokastër County 6001, Albania",
     lat: 40.0757, lon: 20.1390, meta: "עיר עתיקה · טירה · מטוס ריגול",
     lines: [
       "## יום 4 (26.09, שבת) — יציאה",
@@ -208,6 +220,7 @@ const DAYS = [
     id: 13, date: "27.09", weekday: "ראשון",
     city: "דיוויאקה-קאראווסטה", cityEn: "Divjakë-Karavasta National Park",
     lodging: "Green Trails City Center", lodgingType: "Booking",
+    lodgingAddress: "SH57 Divjake, 9022 Divjakë, Albania",
     lat: 40.9930, lon: 19.5372, meta: "שקנאים · יער אורנים · חוף",
     lines: [
       "הנסיעה: ג׳ירוקסטר עד דיוויאקה כ-2:30 דרך הכביש הראשי (טפלנה ← פייר).",
@@ -225,6 +238,7 @@ const DAYS = [
     id: 14, date: "28.09", weekday: "שני",
     city: "דורס", cityEn: "Durrës",
     lodging: "Leonard's Apartment", lodgingType: "Booking",
+    lodgingAddress: "Rruga Vasil Kuqi, Durrës, Albania",
     lat: 41.3231, lon: 19.4414, meta: "נסיעה כ-45 דק · חוף · אמפיתיאטרון",
     lines: [
       "בוקר: נסיעה קצרה של כ-45 דק לדורס. יום אחרון רגוע בעיר החוף לפני הטיסה.",
