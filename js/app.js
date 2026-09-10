@@ -94,7 +94,28 @@ function findTodayDay(days) {
 }
 
 function registerSW() {
-  if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("sw.js").catch(() => {});
-  }
+  if (!("serviceWorker" in navigator)) return;
+
+  // Reload once, automatically, as soon as a new service worker takes control —
+  // so updates show up without the user needing to manually clear cache.
+  let reloaded = false;
+  navigator.serviceWorker.addEventListener("controllerchange", () => {
+    if (reloaded) return;
+    reloaded = true;
+    location.reload();
+  });
+
+  navigator.serviceWorker.register("sw.js").then((reg) => {
+    reg.update().catch(() => {});
+    if (reg.waiting) reg.waiting.postMessage("skipWaiting");
+    reg.addEventListener("updatefound", () => {
+      const nw = reg.installing;
+      if (!nw) return;
+      nw.addEventListener("statechange", () => {
+        if (nw.state === "installed" && navigator.serviceWorker.controller) {
+          nw.postMessage("skipWaiting");
+        }
+      });
+    });
+  }).catch(() => {});
 }

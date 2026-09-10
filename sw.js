@@ -1,4 +1,4 @@
-const CACHE_NAME = "albania-trip-v4";
+const CACHE_NAME = "albania-trip-v5";
 
 const PRECACHE_URLS = [
   "./",
@@ -18,7 +18,10 @@ self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => cache.addAll(PRECACHE_URLS))
   );
-  self.skipWaiting();
+});
+
+self.addEventListener("message", (event) => {
+  if (event.data === "skipWaiting") self.skipWaiting();
 });
 
 self.addEventListener("activate", (event) => {
