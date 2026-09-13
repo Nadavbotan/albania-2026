@@ -1,4 +1,4 @@
-const CACHE_NAME = "albania-trip-v6";
+const CACHE_NAME = "albania-trip-v7";
 
 const PRECACHE_URLS = [
   "./",

@@ -14,6 +14,7 @@ const PLACE_LINKS = {
   "Grand Park (Parku i Liqenit)": mapsUrl("Grand Park of Tirana, Parku i Liqenit, Tirana, Albania"),
   "Drilon Springs": mapsUrl("Drilon Springs, Pogradec, Albania"),
   "Galičica National Park (road P504)": "https://en.mapy.cz/turisticka?planovani-trasy&x=20.8030955&y=40.9410112&z=14&rc=9wMl8wgzrXebp1-Zh5Khv1FNkda&rs=osm&rs=osm&rs=coor&rs=osm&ri=1096312104&ri=6426063&ri=&ri=1096312104&mrp=%7B%22c%22%3A132%7D&xc=%5B%5D",
+  "road p504": "https://en.mapy.cz/turisticka?planovani-trasy&x=20.8030955&y=40.9410112&z=14&rc=9wMl8wgzrXebp1-Zh5Khv1FNkda&rs=osm&rs=osm&rs=coor&rs=osm&ri=1096312104&ri=6426063&ri=&ri=1096312104&mrp=%7B%22c%22%3A132%7D&xc=%5B%5D",
   "Elbasan": "https://maps.app.goo.gl/mHjhRqejT8wKhxPF8",
   "Belshi Lake": "https://maps.app.goo.gl/CwR7ZnDNEWzk7fXo7",
   "wine window": "https://maps.app.goo.gl/ADfsiLoySjps68pA8",
